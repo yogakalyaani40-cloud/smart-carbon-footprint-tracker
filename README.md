@@ -3,6 +3,9 @@
 A smart web-based application that calculates and tracks an individual's carbon 
 footprint based on daily activities and provides insights to reduce environmental impact.
 
+![Dashboard](screenshots/Screenshot 2026-02-13 001653.png)
+
+
  Features
 - Daily carbon footprint calculation
 - Travel emission tracking

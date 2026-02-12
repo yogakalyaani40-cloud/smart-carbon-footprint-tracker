@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carbon Footprint Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #2e7d32;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🌱 Carbon Footprint Tracker</h2>
+
+    <label>Daily Travel Distance (km)</label>
+    <input type="number" id="travel" placeholder="Enter km">
+
+    <label>Electricity Usage (kWh)</label>
+    <input type="number" id="electricity" placeholder="Enter kWh">
+
+    <label>Cooking Gas Used (hours)</label>
+    <input type="number" id="gas" placeholder="Enter hours">
+
+    <button onclick="calculate()">Calculate Carbon Footprint</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+function calculate() {
+    let travel = document.getElementById("travel").value || 0;
+    let electricity = document.getElementById("electricity").value || 0;
+    let gas = document.getElementById("gas").value || 0;
+
+    let carbon = (travel * 0.21) + (electricity * 0.82) + (gas * 2.3);
+
+    document.getElementById("result").innerHTML =
+        "Your Estimated Carbon Footprint: " + carbon.toFixed(2) + " kg CO₂ / day";
+}
+</script>
+
+</body>
+</html>
 
